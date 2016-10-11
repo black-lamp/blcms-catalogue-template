@@ -12,6 +12,7 @@ return [
     'homeUrl' => '/',
     'bootstrap' => [
         'log',
+        'bl\cms\shop\frontend\components\events\PartnersEvents'
     ],
 
     'language' => 'ru',
@@ -21,6 +22,9 @@ return [
     'modules' => [
         'articles' => [
             'class' => 'bl\articles\frontend\Module'
+        ],
+        'shop' => [
+            'class' => 'bl\cms\shop\frontend\Module'
         ],
     ],
     'components' => [
