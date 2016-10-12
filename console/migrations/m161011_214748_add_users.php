@@ -7,10 +7,15 @@ class m161011_214748_add_users extends Migration
 {
     public function safeUp()
     {
+        if (!empty(Yii::$app->params['adminPassword'])) {
+            $password_hash = Yii::$app->security->generatePasswordHash(Yii::$app->params['adminPassword']);
+        } else {
+            $password_hash = null;
+        }
         $this->insert('user', [
             'username' => 'admin',
             'email' => 'admin@admin.com',
-            'password_hash' => Yii::$app->security->generatePasswordHash(Yii::$app->params['adminPassword']),
+            'password_hash' => $password_hash,
             'auth_key' => Yii::$app->security->generateRandomString(),
             'confirmed_at' => time(),
             'registration_ip' => '127.0.0.1',
