@@ -78,6 +78,10 @@ return [
                     'class' => 'bl\articles\UrlRule',
                     //'prefix' => 'articles/'
                 ],
+                [
+                    'class' => bl\cms\shop\UrlRule::className(),
+                    'prefix' => 'shop'
+                ]
             ],
         ],
         'view' => [
