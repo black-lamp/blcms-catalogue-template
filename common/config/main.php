@@ -10,6 +10,10 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
+        'formatter' => [
+            'currencyCode' => 'UAH',
+            'nullDisplay' => '',
+        ],
         'shop_imagable' => [
             'class' => 'bl\imagable\Imagable',
             'imageClass' => CreateImageImagine::className(),
